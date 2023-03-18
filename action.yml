@@ -22,7 +22,7 @@ runs:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - name: Setup and run tests
-      working-directory: ./hackathons/hack-flash
+      working-directory: "{{ $GITHUB_ACTION_PATH }}/hackathons/hack-flash"
       run: test.sh
       shell: bash
     - run: goodbye.sh
