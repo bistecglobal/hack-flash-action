@@ -1,5 +1,7 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'Bistecglobal Hackathon Evaluate'
+description: 'Evaluate Bistecglobal hackathon'
+icon: mic
+color: purple
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
