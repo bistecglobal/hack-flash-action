@@ -1,0 +1,27 @@
+{
+  "name": "hack-flash-tests",
+  "version": "1.0.0",
+  "description": "Hack Flash Tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bistecglobal/hack-flash-action.git"
+  },
+  "keywords": [
+    "BistecGlobal",
+    "Hack",
+    "Falsh"
+  ],
+  "author": "Chandima Ranaweera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bistecglobal/hack-flash-action/issues"
+  },
+  "homepage": "https://github.com/bistecglobal/hack-flash-action#readme",
+  "devDependencies": {
+    "cypress": "^12.8.1"
+  }
+}
