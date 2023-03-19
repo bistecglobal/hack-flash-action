@@ -1,12 +1,17 @@
 name: 'Bistecglobal Hackathon Evaluate'
 description: 'Evaluate Bistecglobal hackathon'
-icon: mic
-color: purple
+branding:
+  icon: 'award'
+  color: 'green'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  base-app-url:  # id of input
+    description: 'Application UI Url'
     required: true
-    default: 'World'
+    default: ''
+  base-api-url:  # id of input
+    description: 'Application API Url'
+    required: true
+    default: ''
 outputs:
   random-number:
     description: "Random number"
@@ -14,7 +19,9 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - run: echo using API ${{ inputs.base-api-url }}.
+      shell: bash
+    - run: echo using web ${{ inputs.base-app-url }}.
       shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
@@ -22,7 +29,10 @@ runs:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - name: Setup and run tests
-      run: test.sh
+      run: |
+        export CYPRESS_BASE_URL=${{ inputs.base-app-url }}
+        export CYPRESS_API_BASE_URL=${{ inputs.base-api-url }}
+        test.sh
       shell: bash
     - run: goodbye.sh
       shell: bash
