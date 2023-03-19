@@ -29,10 +29,10 @@ runs:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: "80e46db53ad385bbd5d4e37ca396a8a40f926963"
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: "80e46db53ad385bbd5d4e37ca396a8a40f926963"
     - name: Setup and run tests
       run: |
         export CYPRESS_BASE_URL=${{ inputs.base-app-url }}
