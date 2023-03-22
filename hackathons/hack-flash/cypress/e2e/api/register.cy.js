@@ -13,7 +13,7 @@ describe('Register Vehicle Api', () => {
         licencePlate: "ABC-2323"
        } ).as('registered');
   
-      cy.get('@types').should((response) => {
+      cy.get('@registered').should((response) => {
         expect(response.body).to.have.property('registered', true)
       })
     })
