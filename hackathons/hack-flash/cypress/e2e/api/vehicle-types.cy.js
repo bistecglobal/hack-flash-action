@@ -37,4 +37,37 @@ describe('Get Vehicle Types Api', () => {
     })
   })
 
+  it('should contain Bike vehicle type', () => {
+
+    cy.request('/api/vehicle/types').as('types');
+
+    cy.get('@types').should((response) => {
+      console.log(response.body);
+      const car = response.body.find(x => x.name.toLowerCase() == 'bike');
+      expect(car.quota).to.equal(4);
+    })
+  })
+
+  it('should contain Lorry vehicle type', () => {
+
+    cy.request('/api/vehicle/types').as('types');
+
+    cy.get('@types').should((response) => {
+      console.log(response.body);
+      const car = response.body.find(x => x.name.toLowerCase() == 'lorry');
+      expect(car.quota).to.equal(40);
+    })
+  })
+
+  it('should contain Three Wheel vehicle type', () => {
+
+    cy.request('/api/vehicle/types').as('types');
+
+    cy.get('@types').should((response) => {
+      console.log(response.body);
+      const car = response.body.find(x => x.name.toLowerCase() == 'three wheel');
+      expect(car.quota).to.equal(5);
+    })
+  })
+
 })
