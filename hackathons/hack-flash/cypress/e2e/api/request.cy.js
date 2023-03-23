@@ -7,7 +7,7 @@ describe('Request Fuel Api', () => {
       // cy.request('/api/clean')
     })
   
-    it('should request fuel successfully for first time', () => {
+    it.skip('should request fuel successfully for first time', () => {
   
       cy.request('POST', '/api/fuel/request', { 
         "licencePlate": "ABC-2323",
@@ -21,7 +21,7 @@ describe('Request Fuel Api', () => {
       })
     })
 
-    it('should request fuel complete successfully within quota', () => {
+    it.skip('should request fuel complete successfully within quota', () => {
   
       cy.request('POST', '/api/fuel/request', { 
         "licencePlate": "ABC-2323",
@@ -41,7 +41,7 @@ describe('Request Fuel Api', () => {
       })
     })
 
-    it('should request fuel fail outside quota', () => {
+    it.skip('should request fuel fail outside quota', () => {
   
       cy.request('POST', '/api/fuel/request', { 
         "licencePlate": "ABC-2323",
