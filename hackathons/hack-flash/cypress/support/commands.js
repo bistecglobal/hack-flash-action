@@ -18,7 +18,7 @@ Cypress.Commands.add('register', (type, plate) => {
 })
 
 Cypress.Commands.add('clean', () => { 
-    cy.request('DELETE', '/api/clean')
+    cy.request('DELETE', '/api/clean').then(resp => expect(resp.isOkStatusCode).to.be.true)
 })
 
 
