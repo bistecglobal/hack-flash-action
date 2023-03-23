@@ -20,6 +20,16 @@ Cypress.Commands.add('register', (type, plate) => {
 Cypress.Commands.add('clean', () => { 
     cy.request('DELETE', '/api/clean')
 })
+
+
+Cypress.Commands.add('registerFromApi', (type, plate) => { 
+    cy.request('POST', '/api/vehicle/register', { 
+        vehicleType: type,
+        licencePlate: plate
+       } ).as('registered');
+})
+
+
 //
 //
 // -- This is a child command --

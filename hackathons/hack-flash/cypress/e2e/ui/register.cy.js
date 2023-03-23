@@ -7,7 +7,7 @@ describe('Register Vehicle Api', () => {
       cy.clean()
     })
   
-    it('should register new api', () => {
+    it('should register new vehicle', () => {
         
         cy.get('#vehicleType').select('BUS');
         cy.get('#licensePlate').type('KK-2009');
@@ -16,5 +16,13 @@ describe('Register Vehicle Api', () => {
         cy.get('div').contains('Success').should('be.visible');
     
     })
+
+    it('should not register existing vehicle', () => {
+        
+      cy.register('CAR', 'kk-2008');
+      cy.register('CAR', 'kk-2008');
+      cy.get('div').contains('Error').should('be.visible');
+  
+  })
   
   })

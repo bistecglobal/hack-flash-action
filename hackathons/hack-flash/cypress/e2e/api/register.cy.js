@@ -4,6 +4,7 @@ describe('Register Vehicle Api', () => {
     beforeEach(() => {
       // SET Base url from CYPRESS_BASE_URL env variable
       cy.visit('/')
+      cy.clean()
     })
   
     it('should register new api', () => {
