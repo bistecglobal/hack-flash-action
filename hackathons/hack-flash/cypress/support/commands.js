@@ -10,7 +10,16 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('register', (type, plate) => { 
+    cy.visit('/vehicle/register')
+    cy.get('#vehicleType').select(type);
+    cy.get('#licensePlate').type(plate);
+    cy.get('form').submit();
+})
+
+Cypress.Commands.add('clean', () => { 
+    cy.request('DELETE', '/api/clean')
+})
 //
 //
 // -- This is a child command --
