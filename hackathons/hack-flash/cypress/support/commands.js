@@ -25,7 +25,7 @@ Cypress.Commands.add('clean', () => {
 Cypress.Commands.add('registerFromApi', (type, plate) => { 
     cy.request('POST', '/api/vehicle/register', { 
         vehicleType: type,
-        licencePlate: plate
+        licensePlate: plate
        } ).as('registered');
 })
 

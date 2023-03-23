@@ -10,8 +10,8 @@ describe('Register Vehicle Api', () => {
     it('should register new api', () => {
   
       cy.request('POST', '/api/vehicle/register', { 
-        vehicleType: "CAR",
-        licencePlate: "ABC-2323"
+        vehicleType: "Car",
+        licensePlate: "ABC-2323"
        } ).as('registered');
   
       cy.get('@registered').should((response) => {
